@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 thebluemountain@gmail.com
+ * Copyright (C) 2015 thebluemountain@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,7 +84,7 @@ public enum Command
      * @param value is the value being parsed
      * @return the matching command
      */
-    public static Command of (String value)
+    private static Command of (String value)
     {
         for (Command command : EnumSet.allOf (Command.class))
         {
@@ -100,17 +100,17 @@ public enum Command
     /**
      * The command's short name (if any)
      */
-    public final Optional<String> shortname;
+    private final Optional<String> shortname;
 
     /**
      * The command's full name
      */
-    public final String longname;
+    private final String longname;
 
     /**
      * whether the command requires a value
      */
-    public final boolean requiresvalue;
+    private final boolean requiresvalue;
 
     /**
      * The method that checks whether the value matches the command's
@@ -118,7 +118,7 @@ public enum Command
      * @param value is the value
      * @return whether it matches
      */
-    public boolean match (String value)
+    private boolean match (String value)
     {
         return ((this.longname.equals (value)) ||
             ((this.shortname.isPresent ()) &&

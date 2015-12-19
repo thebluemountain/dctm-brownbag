@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 thebluemountain@gmail.com
+ * Copyright (C) 2015 thebluemountain@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,31 +81,19 @@ public final class DCReader
             "(dos_extension IS NOT NULL AND dos_extension <> ' ')";
         try
         {
-            Statement stmt = jdbc.connection.createStatement (
+            try (Statement stmt = jdbc.connection.createStatement (
                 ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-            try
+                ResultSet rs = stmt.executeQuery (sql))
             {
-                ResultSet rs = stmt.executeQuery (sql);
-                try
+                ImmutableMap.Builder <String, String> builder =
+                    ImmutableMap.builder ();
+                while (rs.next ())
                 {
-                    ImmutableMap.Builder <String, String> builder =
-                        ImmutableMap.builder ();
-                    while (rs.next ())
-                    {
-                        String name = rs.getString (1);
-                        String ext = "." + rs.getString (2);
-                        builder.put (name, ext);
-                    }
-                    return Functions.forMap (builder.build (), null);
+                    String name = rs.getString (1);
+                    String ext = "." + rs.getString (2);
+                    builder.put (name, ext);
                 }
-                finally
-                {
-                    rs.close ();
-                }
-            }
-            finally
-            {
-                stmt.close ();
+                return Functions.forMap (builder.build (), null);
             }
         }
         catch (SQLException e)

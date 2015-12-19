@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 thebluemountain@gmail.com
+ * Copyright (C) 2015 thebluemountain@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,12 +132,11 @@ public final class Store
     @Override
     public String toString ()
     {
-        return new StringBuilder ().
-            append ("{\"id\": \"").append (this.id).
-            append ("\", \"name\": \"").append (this.name).
-            append ("\", \"path\": \"").append (this.path).
-            append ("\", \"extension\": ").append (this.extension).
-            append ('}').toString ();
+        return "{\"id\": \"" + this.id +
+            "\", \"name\": \"" + this.name +
+            "\", \"path\": \"" + this.path +
+            "\", \"extension\": " + this.extension +
+            '}';
     }
 
     private Store (String id, String name, String path, boolean extension)

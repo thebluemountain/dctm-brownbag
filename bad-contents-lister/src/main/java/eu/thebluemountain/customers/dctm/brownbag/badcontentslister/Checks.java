@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 thebluemountain@gmail.com
+ * Copyright (C) 2015 thebluemountain@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -288,6 +288,7 @@ public final class Checks
         private CheckedPath pathOf (Content content)
         {
             final Path path = this.path.apply (content);
+            assert path != null;
             if (Files.exists (path))
             {
                 return new CheckedPath (path);
@@ -341,6 +342,7 @@ public final class Checks
                     found = current;
                 }
             }
+            assert found != null;
             return new CheckedPath (found.toPath ());
         }
 

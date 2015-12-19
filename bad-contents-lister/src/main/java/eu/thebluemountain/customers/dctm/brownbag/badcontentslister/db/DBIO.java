@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 thebluemountain@gmail.com
+ * Copyright (C) 2015 thebluemountain@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -142,7 +142,7 @@ public final class DBIO
          * @throws IllegalStateException can be thrown caused by SQL Exception
          * when moving to the next row.
          */
-        protected boolean fetchHasNext () throws IllegalStateException
+        private boolean fetchHasNext () throws IllegalStateException
         {
             try
             {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 thebluemountain@gmail.com
+ * Copyright (C) 2015 thebluemountain@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,9 @@ final class ResponseUI
 {
     /**
      * The method that creates a new ui response
-     * @param increment
-     * @param count
-     * @return
+     * @param increment the number of results for each increment
+     * @param count the number of increment per line
+     * @return the matching response UI
      */
     static ResponseUI create (int increment, int count)
     {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 thebluemountain@gmail.com
+ * Copyright (C) 2015 thebluemountain@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,7 +57,7 @@ public final class DecoratedContent
         {
             DecoratedContent other = (DecoratedContent) obj;
             return ((this.content.equals (other.content)) &&
-                (this.parent.equals (other.content)));
+                (this.parent.equals (other.parent)));
         }
         return false;
     }

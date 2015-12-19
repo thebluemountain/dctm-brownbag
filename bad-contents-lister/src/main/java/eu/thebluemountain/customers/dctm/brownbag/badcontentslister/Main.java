@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 thebluemountain@gmail.com
+ * Copyright (C) 2015 thebluemountain@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -235,6 +235,7 @@ public final class Main
                         DecoratedContent dc = it.next ();
                         count++;
                         final Checks.Result result = checker.apply (dc);
+                        assert null != result;
                         rui.onResponse (result);
                         final Checks.Code code = result.code;
                         codes.add (code);
