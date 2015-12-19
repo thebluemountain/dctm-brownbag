@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bad-contents-lister/bad-contents-lister.iml" filepath="$PROJECT_DIR$/bad-contents-lister/bad-contents-lister.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dctmbrownbag.iml" filepath="$PROJECT_DIR$/dctmbrownbag.iml" />
+    </modules>
+  </component>
+</project>

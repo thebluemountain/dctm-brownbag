@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <parent>
+  <artifactId>dctmbrownbag</artifactId>
+  <groupId>eu.thebluemountain.customers.dctm.brownbag</groupId>
+  <version>1.0-SNAPSHOT</version>
+ </parent>
+ <modelVersion>4.0.0</modelVersion>
+ <artifactId>bad-contents-lister</artifactId>
+ <description>
+  The project that scans a docbase to list all contents
+  that are either missing or whose size, reported by file system,
+  does not match
+ </description>
+ <properties>
+  <sqlserver.version>4.1</sqlserver.version>
+ </properties>
+ <dependencies>
+  <dependency>
+   <groupId>com.google.guava</groupId>
+   <artifactId>guava</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>joda-time</groupId>
+   <artifactId>joda-time</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>com.microsoft.sqlserver</groupId>
+   <artifactId>sqljdbc41</artifactId>
+   <version>${sqlserver.version}</version>
+  </dependency>
+ </dependencies>
+ <build>
+  <plugins>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <version>2.5.5</version>
+    <configuration>
+     <descriptors>
+      <descriptor>src/assembly/src.xml</descriptor>
+     </descriptors>
+     <tarLongFileMode>omit</tarLongFileMode>
+     <archive>
+      <manifest>
+       <mainClass>eu.thebluemountain.customers.dctm.brownbag.badcontentslister.Main</mainClass>
+      </manifest>
+     </archive>
+    </configuration>
+    <executions>
+     <execution>
+      <id>make-assembly</id>
+      <phase>package</phase>
+      <goals>
+       <goal>single</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+  </plugins>
+ </build>
+</project>
