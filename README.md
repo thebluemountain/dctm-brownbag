@@ -6,7 +6,7 @@ work on and that resulted in the creation of java programs.
 The projects included here were selected because they illustrate interesting
 properties of the Documentum server.
 
-The first one, [bad-contents-lister](bad-contents-lister/README.md)
+The first one, [bad-contents-lister](tree/master/bad-contents-lister)
 provides some information about the way Documentum server resolves contents into files.
 
 Enjoy your reading.
